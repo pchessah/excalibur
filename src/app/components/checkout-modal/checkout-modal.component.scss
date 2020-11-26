@@ -1,0 +1,31 @@
+label{
+    font-size: smaller;
+    font-weight: 300;
+}
+
+input{
+    border: none;
+    padding: 5px 20px;
+    background-color: aliceblue;
+}
+
+button,span{
+    width: 200px !important;
+}
+
+//ERROR MESSAGE
+.errorText{
+    font-size: 8px;
+    color: red !important;
+}
+
+// REMOVE NUMBERS FROM INPUT
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

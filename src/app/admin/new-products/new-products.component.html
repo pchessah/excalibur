@@ -1,0 +1,48 @@
+<div class="card-body">
+    <form [formGroup]="productsForm" fxLayout="column" fxLayoutAlign="center" (ngSubmit)="onSubmit()">
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <label>Product Name:</label>
+            <input type="text" formControlName="productName" required>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <label>Product Category:</label>
+            <select formControlName="category" required>
+                <option>White</option>
+                <option>Red</option>
+                <option>Semi-dry</option>
+            </select>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <label>Product Image:</label>
+            <input type="file" required (change)="onFileSelected($event)">
+        </div>
+
+
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <img  [src]="selectedImg"/>
+        </div> 
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <label>Product Price(Ksh):</label>
+            <input type="number" formControlName="price" required>
+        </div>
+
+        <div fxLayout="row" fxLayoutAlign="space-between center">
+            <label>Description:</label>
+            <textarea maxlength="255" formControlName="description" required></textarea>
+        </div>
+        
+        
+    </form>
+    <div fxLayout="row" fxLayoutAlign="space-evenly center" >
+        <button (click)="onSubmit()" class="btn btn-success" type="submit" [disabled]="!productsForm.valid || !checkImgUpload">
+            Save
+        </button>    
+        <button (click)="cancel()" class="btn btn-danger">
+            Cancel
+        </button>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<form [formGroup]="checkoutForm" fxLayout="column">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+        <h5 class="text-center">Check Out</h5>
+        <i (click)="close()" class="far fa-times-circle"></i>
+    </div>
+    <div fxLayout="row wrap"fxLayoutAlign="space-evenly center">
+        <div fxLayout="column">
+            <label for="firstName">First Name</label>
+            <input  formControlName="firstName" type="text" required>
+            <div class="text-muted errorText" *ngIf="checkoutForm.get('firstName').hasError('required') && checkoutForm.get('firstName').touched">This field is required</div>
+        </div>
+        <div fxLayout="column">
+            <label for="lastName">Last Name</label>
+            <input  formControlName="lastName" type="text" required>
+            <div class="text-muted errorText" *ngIf="checkoutForm.get('lastName').hasError('required') && checkoutForm.get('lastName').touched">This field is required</div>
+        </div>       
+    </div>
+    <div fxLayout="row wrap"fxLayoutAlign="space-evenly center">
+        
+        <div fxLayout="column">
+            <label for="email">Your Email</label>
+            <input  formControlName="email" type="email" required>
+            <div class="text-muted errorText" *ngIf="checkoutForm.get('email').hasError('required') && checkoutForm.get('email').touched">This field is required</div>
+            <div class="text-muted errorText" *ngIf="checkoutForm.get('email').hasError('email') && checkoutForm.get('email').touched">Enter Email correctly</div>
+        </div>
+       
+        <div fxLayout="column">
+            <label for="phoneNumber">Your Phone No</label>
+            <input  formControlName="phoneNumber" type="number" required>
+            <div class="text-muted errorText" *ngIf="checkoutForm.get('phoneNumber').hasError('required') && checkoutForm.get('phoneNumber').touched">This field is required</div>
+        </div>
+       
+    </div>
+    <div fxLayout="row wrap"fxLayoutAlign="space-evenly center">
+        <span class="btn btn-warning m-2">
+            Total:Ksh. {{data.total}}
+        </span>
+    </div>
+    <div class="text-center" fxLayout="column"fxLayoutAlign="center center">
+        <button (click)="submitOrder()" class="btn btn-success m-2" type="submit" [disabled]="!checkoutForm.valid" >
+            <i class="far fa-envelope p-1 m-1"></i>Order via email
+        </button>
+        <button (click)="whatsappAdmin()" class="btn btn-outline-success m-2" type="submit" [disabled]="!checkoutForm.valid">
+            <i class="fab fa-whatsapp p-1 m-1"></i>Order via Whatsapp
+        </button>
+        <button (click)="cancelOrder()" class="btn btn-outline-danger m-2">
+            Cancel order
+        </button>
+    </div>
+
+</form>
