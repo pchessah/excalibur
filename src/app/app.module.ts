@@ -14,7 +14,14 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import { ProductsComponent } from './pages/products/all-products/products.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { SingleProductComponent } from './pages/products/single-product/single-product.component';
+import { CartBadgeComponent } from './components/cart-badge/cart-badge.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CheckoutModalComponent } from './components/checkout-modal/checkout-modal.component';
 
+
+//MAT MODULES
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
@@ -31,11 +38,6 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { NewProductsComponent } from './admin/new-products/new-products.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
-import { SingleProductComponent } from './pages/products/single-product/single-product.component';
-import { CartBadgeComponent } from './components/cart-badge/cart-badge.component';
-import { CheckoutComponent } from './pages/checkout/checkout.component';
-import { CheckoutModalComponent } from './components/checkout-modal/checkout-modal.component';
 
 
 
