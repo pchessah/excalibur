@@ -38,6 +38,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { NewProductsComponent } from './admin/new-products/new-products.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/storage'; 
 
 
 
@@ -80,7 +81,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [ AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
