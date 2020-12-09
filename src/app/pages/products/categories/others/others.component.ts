@@ -16,7 +16,7 @@ export class OthersComponent implements OnInit {
   constructor(
     private _productsService: ProductsService,
     public dialog: MatDialog,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getAllProducts()
