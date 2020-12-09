@@ -38,7 +38,9 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { NewProductsComponent } from './admin/new-products/new-products.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireStorage } from '@angular/fire/storage'; 
+import { AngularFireStorage } from '@angular/fire/storage';
+import { TvComponent } from './pages/products/categories/tv/tv.component';
+import { OthersComponent } from './pages/products/categories/others/others.component'; 
 
 
 
@@ -59,6 +61,8 @@ import { AngularFireStorage } from '@angular/fire/storage';
     CartBadgeComponent,
     CheckoutComponent,
     CheckoutModalComponent,
+    TvComponent,
+    OthersComponent,
   ],
   imports: [
     BrowserModule,

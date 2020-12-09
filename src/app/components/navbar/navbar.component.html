@@ -9,7 +9,13 @@
   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="'/products'" (click)="isMenuCollapsed = true">Products</a>
+        <a class="nav-link" [routerLink]="'/products'" (click)="isMenuCollapsed = true">All Products</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="'/tvs'" (click)="isMenuCollapsed = true">TVs</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="'/others'" (click)="isMenuCollapsed = true">Others</a>
       </li>
       <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="'/about-us'" (click)="isMenuCollapsed = true">About</a>
@@ -20,9 +26,9 @@
 
       <!-- PUT GUARD TO ONLY SHOW IF ADMIN HAS LOGGED IN, ENABLE TO ADD PRODUCTS -->
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="'/admin'" (click)="isMenuCollapsed = true">Admin</a>
-      </li>
+      </li> -->
 
     </ul>
   </div>

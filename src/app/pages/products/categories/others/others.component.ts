@@ -4,12 +4,12 @@ import { MatDialog } from '@angular/material/dialog'
 import { ProductsModel } from 'src/app/libs/models/products-model'
 
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.scss'],
+  selector: 'app-others',
+  templateUrl: './others.component.html',
+  styleUrls: ['./others.component.scss'],
 })
-export class ProductsComponent implements OnInit {
-  products: ProductsModel[]
+export class OthersComponent implements OnInit {
+  others: ProductsModel[]
   singleProduct: ProductsModel = this._productsService.singleProduct
   cart: ProductsModel[] = this._productsService.cart
 
@@ -22,15 +22,15 @@ export class ProductsComponent implements OnInit {
     this.getAllProducts()
   }
 
-  getAllProducts(): void {
+  getAllProducts(){
     this._productsService.getAllProducts().subscribe((products) => {
-      this.products = products.map((e) => {
+      this.others = products.map((e) => {
         return {
           id: e.payload.doc.id,
           ...(e.payload.doc.data() as {}),
         } as ProductsModel
-      })
-    })
+      }).filter((item) => item.category === "Others")
+    })    
   }
 
   //ADD ITEM TO CART, OPEN MODAL FOR THE ITEM
