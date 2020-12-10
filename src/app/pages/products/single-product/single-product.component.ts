@@ -30,11 +30,8 @@ export class SingleProductComponent implements OnInit {
   }
 
   addToCart(): void {
-    const id = this.route.snapshot.paramMap.get("id");    
-    this._productService.getSingleProduct(id).subscribe((singleProduct : ProductsModel)=>{
-      this.singleProduct = singleProduct;
-      this._productService.addToCart(id);
-    })    
+    const id = this.route.snapshot.paramMap.get("id"); 
+    this._productService.addToCart(id);
   }
 
   goBack(): void{

@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
-import { catchError } from "rxjs/operators";
+import { catchError, take } from "rxjs/operators";
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ProductsModel } from "../models/products-model";
 import { AngularFireStorage } from '@angular/fire/storage';
@@ -28,10 +28,11 @@ export class ProductsService implements OnInit {
   ngOnInit(): void { }
 
 
+
   
   //ADD ITEM TO CART
   addToCart(id) {
-    this.getSingleProduct(id).subscribe((singleProduct: ProductsModel) => {
+    return this.getSingleProduct(id).pipe(take(1)).subscribe((singleProduct: ProductsModel) => {
       if (this.singleProduct !== null || this.singleProduct !== undefined) {
         this.singleProduct = singleProduct;
         this.updateSingleProduct(this.singleProduct);
@@ -41,6 +42,10 @@ export class ProductsService implements OnInit {
       }
     })
   }
+
+
+
+  
 
 
   //CLEAR CART

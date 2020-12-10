@@ -10,8 +10,6 @@ import { ProductsModel } from 'src/app/libs/models/products-model'
 })
 export class ProductsComponent implements OnInit {
   products: ProductsModel[]
-  singleProduct: ProductsModel = this._productsService.singleProduct
-  cart: ProductsModel[] = this._productsService.cart
 
   constructor(
     private _productsService: ProductsService,
@@ -33,7 +31,7 @@ export class ProductsComponent implements OnInit {
     })
   }
 
-  //ADD ITEM TO CART, OPEN MODAL FOR THE ITEM
+  //ADD ITEM TO CART
   addToCart(id): void {
     this._productsService.addToCart(id)
   }
