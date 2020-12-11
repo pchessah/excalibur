@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "excalibur"
+    }
+  },
+  "defaultProject": "excalibur",
+  "cli": {
+    "analytics": "f19fa1a2-61c3-4740-a0c2-bf612fd6fdd8"
+  }
 }
