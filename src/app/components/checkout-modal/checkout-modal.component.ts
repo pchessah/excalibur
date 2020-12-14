@@ -171,7 +171,7 @@ export class CheckoutModalComponent implements OnInit {
     this.toastr.success(`Order number: ${this.order.orderNo} submitted.`)
     this.getProductsForAdmin();
 
-    this.whatsAppMessage = `Hi, my name is ${this.order.firstName} ${this.order.lastName}. I would like the following wines from your site: ${this.productsForAdmin} which comes to a grand total of ${this.order.grandTotal}`
+    this.whatsAppMessage = `Hi, my name is ${this.order.firstName} ${this.order.lastName}. I would like the following products from your site: ${this.productsForAdmin} which comes to a grand total of ${this.order.grandTotal}`
     this.whatsAppUrl = `https://api.whatsapp.com/send?phone=254705490489&text=%20${this.whatsAppMessage}`
     window.open(this.whatsAppUrl, "_blank")
 
