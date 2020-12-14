@@ -129,7 +129,7 @@ export class CheckoutModalComponent implements OnInit {
       order_no: this.order.orderNo
     };
 
-    emailjs.send('service_csyz6nw', 'template_j0w73t8', templateParams, 'user_s3GXm5gpAGyKt7rNl9Qfb')
+    emailjs.send('service_mx3blyk', 'template_j0w73t8', templateParams, 'user_s3GXm5gpAGyKt7rNl9Qfb')
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
       }, (err) => {
